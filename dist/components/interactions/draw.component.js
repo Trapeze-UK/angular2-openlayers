@@ -20,7 +20,6 @@ var DrawInteractionComponent = (function () {
     DrawInteractionComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.instance = new openlayers_1.interaction.Draw(this);
-        // this.instance = new interaction.Draw(this);
         this.map.instance.addInteraction(this.instance);
         this.instance.on('drawend', function (event) { return _this.drawend.emit(event); });
     };

@@ -1,6 +1,6 @@
 /// <reference types="openlayers" />
-import { OnDestroy, OnInit, EventEmitter } from '@angular/core';
-import { interaction, geom, Collection, Feature, source, EventsConditionType, style, DrawGeometryFunctionType, StyleFunction } from 'openlayers';
+import { EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { interaction, Feature, Collection, style, source, EventsConditionType, StyleFunction, DrawGeometryFunctionType, geom } from 'openlayers';
 import { MapComponent } from '../map.component';
 export declare class DrawInteractionComponent implements OnInit, OnDestroy {
     private map;

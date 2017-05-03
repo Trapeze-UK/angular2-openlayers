@@ -1,10 +1,7 @@
-import {Component, OnDestroy, OnInit, Input, EventEmitter, Output} from '@angular/core';
-import {
-  interaction, geom, Collection, Feature, source, EventsConditionType, style, DrawGeometryFunctionType,
-  StyleFunction, events
-} from 'openlayers';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {interaction, Feature, Collection, style, source, EventsConditionType, StyleFunction,
+  DrawGeometryFunctionType, geom} from 'openlayers';
 import {MapComponent} from '../map.component';
-import {SourceVectorComponent} from '../sources/vector.component';
 
 @Component({
   selector: 'aol-interaction-draw',
@@ -37,7 +34,6 @@ export class DrawInteractionComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.instance = new interaction.Draw(this);
 
-    // this.instance = new interaction.Draw(this);
     this.map.instance.addInteraction(this.instance);
 
     this.instance.on('drawend', (event: interaction.Draw.Event) => this.drawend.emit(event));
@@ -47,3 +43,4 @@ export class DrawInteractionComponent implements OnInit, OnDestroy {
     this.map.instance.removeInteraction(this.instance);
   }
 }
+
