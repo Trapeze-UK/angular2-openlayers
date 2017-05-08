@@ -15,12 +15,17 @@ var map_component_1 = require("../map.component");
 var ModifyInteractionComponent = (function () {
     function ModifyInteractionComponent(map) {
         this.map = map;
+        this.modifystart = new core_1.EventEmitter();
+        this.modifyend = new core_1.EventEmitter();
     }
     ModifyInteractionComponent.prototype.ngOnInit = function () {
     };
     ModifyInteractionComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
         this.instance = new openlayers_1.interaction.Modify(this);
         this.map.instance.addInteraction(this.instance);
+        this.instance.on('modifystart', function (event) { return _this.modifystart.emit(event); });
+        this.instance.on('modifyend', function (event) { return _this.modifyend.emit(event); });
     };
     ModifyInteractionComponent.prototype.ngOnDestroy = function () {
         this.map.instance.removeInteraction(this.instance);
@@ -55,6 +60,14 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", Boolean)
 ], ModifyInteractionComponent.prototype, "wrapX", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], ModifyInteractionComponent.prototype, "modifystart", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], ModifyInteractionComponent.prototype, "modifyend", void 0);
 ModifyInteractionComponent = __decorate([
     core_1.Component({
         selector: 'aol-interaction-modify',

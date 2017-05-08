@@ -15,4 +15,5 @@ __export(require("./mousewheelzoom.component"));
 __export(require("./pinchzoom.component"));
 __export(require("./draw.component"));
 __export(require("./modify.component"));
+__export(require("./snap.component"));
 //# sourceMappingURL=index.js.map

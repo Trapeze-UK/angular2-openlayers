@@ -10,3 +10,4 @@ export * from './mousewheelzoom.component';
 export * from './pinchzoom.component';
 export * from './draw.component';
 export * from './modify.component';
+export * from './snap.component';

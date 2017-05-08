@@ -10,15 +10,19 @@
 
     <aol-source-vector #tzPrimarySource>
       <aol-style #tzPrimaryStyle [fill]="zoneFill" [stroke]="zoneStroke"></aol-style>
-      <aol-interaction-draw type="Polygon" (drawend)="zoneCreated($event)"
+      <aol-interaction-draw *ngIf="!enableModification" type="Polygon" (drawend)="zoneCreated($event)"
                               [source]="tzPrimarySource.instance"
-                              [features]="features">
+                              [features]="features"
+      >
         </aol-interaction-draw>
-      <aol-interaction-modify [features]="features"></aol-interaction-modify>
+      <aol-interaction-snap [features]="features" [source]="tzPrimarySource" [pixelTolerance]="50"></aol-interaction-snap>
+      <aol-interaction-modify *ngIf="enableModification" [features]="features"
+                              (modifystart)="zoneModifyStart($event)"
+                              (modifyend)="zoneModifyEnd($event)"></aol-interaction-modify>
     </aol-source-vector>
   </aol-layer-vector>
 </aol-map>
 
 <span>opacity:</span><button (click)="increaseOpacity()">+</button><button (click)="decreaseOpacity()">-</button><br>
 <span>zoom:</span><button (click)="increaseZoom()">+</button><button (click)="decreaseZoom()">-</button><br>
-<span>Modify ?:</span><button (click)="enableModification = !enableModification"></button><br>
+<span>Modify ?:</span><button (click)="enableModification = !enableModification">Toggle Modification</button><br>
