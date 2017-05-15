@@ -22,6 +22,9 @@ import {
   AttributionComponent,
   AttributionsComponent
 } from './components';
+import {DrawInteractionComponent} from './components/interactions/draw.component';
+import {ModifyInteractionComponent} from './components/interactions/modify.component';
+import {SnapInteractionComponent} from './components/interactions/snap.component';
 
 export * from './components';
 
@@ -80,6 +83,9 @@ const COMPONENTS = [
   DragZoomInteractionComponent,
   MouseWheelZoomInteractionComponent,
   PinchZoomInteractionComponent,
+  DrawInteractionComponent,
+  ModifyInteractionComponent,
+  SnapInteractionComponent,
 
   OverlayComponent,
   ContentComponent,

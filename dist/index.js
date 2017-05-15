@@ -12,6 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var components_1 = require("./components");
+var draw_component_1 = require("./components/interactions/draw.component");
+var modify_component_1 = require("./components/interactions/modify.component");
+var snap_component_1 = require("./components/interactions/snap.component");
 __export(require("./components"));
 var COMPONENTS = [
     components_1.MapComponent,
@@ -25,6 +28,7 @@ var COMPONENTS = [
     components_1.SourceXYZComponent,
     components_1.SourceVectorTileComponent,
     components_1.SourceTileWMSComponent,
+    components_1.SourceGeoJSONComponent,
     components_1.FeatureComponent,
     components_1.GeometryLinestringComponent,
     components_1.GeometryPointComponent,
@@ -60,6 +64,9 @@ var COMPONENTS = [
     components_1.DragZoomInteractionComponent,
     components_1.MouseWheelZoomInteractionComponent,
     components_1.PinchZoomInteractionComponent,
+    draw_component_1.DrawInteractionComponent,
+    modify_component_1.ModifyInteractionComponent,
+    snap_component_1.SnapInteractionComponent,
     components_1.OverlayComponent,
     components_1.ContentComponent,
     components_1.AttributionComponent,
